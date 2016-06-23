@@ -1,0 +1,39 @@
+[10-Mar-2015 21:05:15 UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Route callable must be callable' in /home/nick0488/public_html/shallwewalk/Slim/Route.php:178
+Stack trace:
+#0 /home/nick0488/public_html/shallwewalk/Slim/Route.php(107): Slim\Route->setCallable('addUser')
+#1 /home/nick0488/public_html/shallwewalk/Slim/Slim.php(443): Slim\Route->__construct('/student/regist...', 'addUser', true)
+#2 /home/nick0488/public_html/shallwewalk/Slim/Slim.php(473): Slim\Slim->mapRoute(Array)
+#3 /home/nick0488/public_html/shallwewalk/scripts/index.php(17): Slim\Slim->get('/student/regist...', 'addUser')
+#4 {main}
+  thrown in /home/nick0488/public_html/shallwewalk/Slim/Route.php on line 178
+[10-Mar-2015 21:05:22 UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Route callable must be callable' in /home/nick0488/public_html/shallwewalk/Slim/Route.php:178
+Stack trace:
+#0 /home/nick0488/public_html/shallwewalk/Slim/Route.php(107): Slim\Route->setCallable('addUser')
+#1 /home/nick0488/public_html/shallwewalk/Slim/Slim.php(443): Slim\Route->__construct('/student/regist...', 'addUser', true)
+#2 /home/nick0488/public_html/shallwewalk/Slim/Slim.php(473): Slim\Slim->mapRoute(Array)
+#3 /home/nick0488/public_html/shallwewalk/scripts/index.php(17): Slim\Slim->get('/student/regist...', 'addUser')
+#4 {main}
+  thrown in /home/nick0488/public_html/shallwewalk/Slim/Route.php on line 178
+[10-Mar-2015 21:54:49 UTC] PHP Fatal error:  Cannot use object of type stdClass as array in /home/nick0488/public_html/shallwewalk/scripts/addUser.php on line 22
+[10-Mar-2015 21:56:56 UTC] PHP Fatal error:  Cannot use object of type stdClass as array in /home/nick0488/public_html/shallwewalk/scripts/addUser.php on line 22
+[10-Mar-2015 21:58:05 UTC] PHP Fatal error:  Cannot use object of type stdClass as array in /home/nick0488/public_html/shallwewalk/scripts/addUser.php on line 22
+[10-Mar-2015 21:58:10 UTC] PHP Fatal error:  Cannot use object of type stdClass as array in /home/nick0488/public_html/shallwewalk/scripts/addUser.php on line 22
+[10-Mar-2015 21:58:49 UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Route callable must be callable' in /home/nick0488/public_html/shallwewalk/Slim/Route.php:178
+Stack trace:
+#0 /home/nick0488/public_html/shallwewalk/Slim/Route.php(107): Slim\Route->setCallable('addUser')
+#1 /home/nick0488/public_html/shallwewalk/Slim/Slim.php(443): Slim\Route->__construct('/student/regist...', 'addUser', true)
+#2 /home/nick0488/public_html/shallwewalk/Slim/Slim.php(473): Slim\Slim->mapRoute(Array)
+#3 /home/nick0488/public_html/shallwewalk/scripts/index.php(18): Slim\Slim->get('/student/regist...', 'addUser')
+#4 {main}
+  thrown in /home/nick0488/public_html/shallwewalk/Slim/Route.php on line 178
+[10-Mar-2015 22:07:57 UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Route callable must be callable' in /home/nick0488/public_html/shallwewalk/Slim/Route.php:178
+Stack trace:
+#0 /home/nick0488/public_html/shallwewalk/Slim/Route.php(107): Slim\Route->setCallable('addUser')
+#1 /home/nick0488/public_html/shallwewalk/Slim/Slim.php(443): Slim\Route->__construct('/student/regist...', 'addUser', true)
+#2 /home/nick0488/public_html/shallwewalk/Slim/Slim.php(473): Slim\Slim->mapRoute(Array)
+#3 /home/nick0488/public_html/shallwewalk/scripts/index.php(18): Slim\Slim->get('/student/regist...', 'addUser')
+#4 {main}
+  thrown in /home/nick0488/public_html/shallwewalk/Slim/Route.php on line 178
+[10-Mar-2015 23:14:25 UTC] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/nick0488/public_html/shallwewalk/scripts/addUser.php on line 47
+[31-Mar-2015 14:15:56 UTC] PHP Fatal error:  Call to a member function rowCount() on a non-object in /home/nick0488/public_html/shallwewalk/scripts/getModules.php on line 30
+[31-Mar-2015 14:16:12 UTC] PHP Fatal error:  Cannot use string offset as an array in /home/nick0488/public_html/shallwewalk/scripts/getModules.php on line 40

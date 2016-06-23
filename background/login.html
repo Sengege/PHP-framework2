@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <meta charset="utf-8">
+	<title>Login</title>
+    <style>
+		.panel{width: 80%;margin: 0 auto;}
+	</style>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--Here is some Js links-->
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<script language=javascript>
+		function ff(){
+			var  str=document.form1.user.value;
+			var  str1=document.form1.pwd.value;
+
+			if(str==""||str1==""){
+				alert("请输入户名和密码!");
+			}else if (str=="admin" & str1=="admin123"){
+				alert("欢迎你，"+str+"用户登陆");
+				/*window.open("select.html");*/
+				window.location.href="index.html";
+			}else{
+				alert("用户名或密码错误！");
+				}
+       }
+	   
+	</script>
+</head>
+<body style="background-color:#DDDDDD;">
+	<div class="panel panel-default" >
+    	<div class="panel-heading">
+        	<div class="row">
+        		<div class="col-md-2"><image src="image/logo.png"  width=50px></div>
+                <div class="col-md-3 col-md-offset-3"><h1>Login</h1></div>
+        	</div>
+    	</div>
+        
+    	<div class="panel-body">
+    		<form name="form1" class="form-horizontal">            
+        		<div class="form-group">
+  					<label for="user" class="col-md-1 col-md-offset-3 control-label glyphicon glyphicon-user"><B>Username:</B></label>
+  					<div class="col-md-4">
+  						<input type="text" class="form-control" id="user" name="user" placeholder="Please enter your account">
+  					</div>
+  				</div>
+        
+  				<div class="form-group">
+  					<label for="pwd" class="col-md-1 col-md-offset-3 control-label glyphicon glyphicon-lock"><B>Password:</B></label>
+  					<div class="col-md-4">
+  						<input type="password" class="form-control" id="pwd" name="pwd" placeholder="Please enter your password">
+ 					</div>
+  				</div>
+     		</form>
+     	</div> 
+      
+     	<div class="panel-footer">
+     		<div style="width:300px; margin:0 auto">
+        		<button type="button" name="button" class="btn btn-info btn-lg btn-block" onClick="ff()">Login</button>
+     		</div>
+     	</div>
+	</div> 
+</body>
+</html>

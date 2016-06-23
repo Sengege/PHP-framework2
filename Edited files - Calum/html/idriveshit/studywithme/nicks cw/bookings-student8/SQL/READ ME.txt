@@ -1,0 +1,5 @@
+!Important
+
+DO NOT MODIFY OR DELETE RESET.SQL
+
+rest.sql is used for development purposes to reset the database.

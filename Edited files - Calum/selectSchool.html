@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Database Test</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<!-- BootstrapSelect -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-select.css">		
+	<!-- Chosen -->	
+	<link rel="stylesheet" href="css/chosen.css">	
+	<!-- jquery UI -->
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+	<style>
+		.error { color:#f00; }
+	</style>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+	
+		<div class="container">
+		
+		<a href="index.php">Home</a>
+		
+			
+			<h1>Add Student</h1>
+
+			
+			
+			<div class="row">
+				
+					
+				<div id="stepTwo" >
+					<h3>Step 2</h3>
+					<div id="stepTwoContent" style="display:none;">
+						<div id="schoolSection"  >
+							<p>Choose your school</p>
+							<select id="schoolOptions" name="school" data-placeholder="Select your school">
+								<option value="">Select School</option>
+							</select>
+						</div>
+					
+						<p></p>
+					
+						<div id="moduleSection"  style="display:none;">
+							<p>Choose your Modules</p>
+							<select id="moduleOptions" class="chosen-select"  multiple data-placeholder="Select your modules"></select>					
+						</div>
+						<p></p>
+					<button type="button" disabled="disabled" class="btn btn-primary" id="submitAll">Select at least 3 modules</button>
+					</div>
+					
+				</div>
+			</div>
+						
+			
+			
+		</div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->    
+	<script src="js/chosen.jquery.js"></script>
+	<script type="text/javascript">    
+		$("#schoolOptions").chosen({
+			
+			no_results_text: "Oops, nothing found!",
+			width:"95%"
+			
+		  });
+		$("#moduleOptions").chosen({
+			
+			no_results_text: "Oops, nothing found!",
+			width:"95%"
+		  });
+	</script>
+	
+    <script src="js/bootstrap.min.js"></script>	
+	<script src="js/validation/jquery.validate.js"></script>	
+	<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>	
+	
+	
+	<script>
+	
+		var newStudent = [];
+		newStudent["schools"];
+		newStudent["schoolModules"];
+		newStudent["selectedModules"] = [];
+		
+		storeModuleData();
+		
+		/** CODE TO GET DATA **/
+		function storeModuleData()
+		{
+			/* Download and store module JSON */
+			$.get( "scripts/modules/1", function( data ) {
+							
+				var jData = jQuery.parseJSON(data)
+				var numberOfModules = jData.school_number;
+				if(numberOfModules)
+				{
+					newStudent["schools"] = jData.schools;
+					populateSchools();
+				}
+				else 
+				{
+					alert( "something went wrong"); 
+				}
+			})
+		}
+		/**  --  **/
+		/** Populates school field for chosen university **/
+		function populateSchools()
+		{
+			$.each( newStudent["schools"], function( key, value ) {
+				console.log(value.name);
+				html = '<option value="'+key+'">'+value.name+'</option>';
+				$("#schoolOptions").append(html)
+			})
+			
+			$('#schoolOptions').trigger('chosen:updated');
+			//Display stepTwoContent content when school form has loaded
+			$("#stepTwoContent").show();
+		}
+		/**  --  **/
+		
+		/** When school option has been chosen **/
+		$("#schoolOptions").on('change',function(e){
+			var schoolSelectedValue = $(this).val();
+			
+			if (schoolSelectedValue != '')
+			{
+				newStudent["schoolModules"] = newStudent["schools"][schoolSelectedValue].modules;
+				// Reset and load modules
+				$("#moduleSection").hide();
+				loadModules();
+			}
+		})
+		
+		function loadModules()
+		{
+			$("#moduleOptions").empty();
+			$.each( newStudent["schoolModules"], function( key, value ) {
+				var html ='<option value="'+value.ID+'">'+value.module_name+' '+value.module_code+'</option>';
+				$("#moduleOptions").append(html)
+			});
+			$('#moduleOptions').trigger('chosen:updated');
+			$("#moduleSection").show()
+		}
+		
+
+		$("#moduleSection").on('change',"#moduleOptions",function(e){
+			// Get selected modules
+			var moduleSelectedValue = $(this).val();
+			console.log(moduleSelectedValue);
+			// Add select modules to array
+			newStudent["selectedModules"] = moduleSelectedValue;
+			
+			if(moduleSelectedValue != null)
+			{
+				if(moduleSelectedValue.length > 2 )
+				{
+					$("#submitAll").text('Finish');
+					$("#submitAll").attr("disabled", false);
+				}
+			
+				else
+				{
+					$("#submitAll").text('Select at least 3 modules');
+					$("#submitAll").attr("disabled", true);
+				}
+			}
+			
+		})
+		
+		
+		
+		$("#submitAll").click(function(e){
+			newStudent["selectedModules"] = [];
+			//console.log($("#moduleOptions .moduleSelected").val());
+			$( "#moduleOptions .moduleSelected" ).each(function( key, value ) {
+				// Add selected modules to array
+				if($(this).val() != '') {
+					newStudent["selectedModules"].push($(this).val());
+				}
+
+			});	
+			console.log(newStudent["selectedModules"]);
+			alert(newStudent["selectedModules"]);
+		})
+	
+		
+	</script>
+  </body>
+</html>
+
+
+
+

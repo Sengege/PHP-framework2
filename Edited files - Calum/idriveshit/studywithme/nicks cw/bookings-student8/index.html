@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Welcome to Oscher Hall Tickets Online</title>
+ <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+ <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+
+ <!-- Custom Script -->
+ <script type="text/javascript" src="js/hubtickets.js"></script>
+ <script type="text/javascript" src="js/reset.js"></script>
+ 
+ 
+ <link rel="stylesheet" href="css/bookings.css" type="text/css" />
+</head>
+<body>
+ <div id='header'>
+  <div>
+   <img src="images/tickets.png" width='253px' height='202px' style="float:left"/>
+   <div style="margin-top:2px;float:left">
+    <img src="images/hubtickets.gif" alt='hubtickets.gif' />
+    <div id="nav">
+     <a class='loginLink anonymous' href="#">Log In</a>
+     <a class='anonymous' href="register.php">Register</a>
+     <a class='resetDatabase anonymous' href="#">Reset Database</a>
+     <a class='member' href="mytickets.php" style="display:none">My Booking</a>
+     <a class='member logOut' href="#" style="display:none">Log Out</a>
+    </div>
+    <div style="clear:both"></div>
+    <div id='loginputs' style="display:none;float:left;padding:none;margin-left:-12px">
+     <form id='logform' method='post'>
+      <fieldset style="border:none;padding:none">
+       <label for="username">User Name&nbsp;</label><input id='username' type='text' name='username'  placeholder='User Name' />
+       &nbsp;<label for="password">Password&nbsp;</label><input type='password' placeholder="Password" name='password' />
+       <input  type="submit" value="Log In" />
+      </fieldset>
+     </form>
+    </div><!-- end of loginputs -->
+   </div>
+  </div>
+ </div>
+ <div style="clear:both"></div>
+ <div id='left' style='float:left;margin-left:10%;margin-top:2%;width:25%;border:1px solid red'>
+  <div id="topLeft" >
+   <h2 style="text-align:center">
+    <span id='salutation' style='color:DarkBlue'>
+     My Tickets
+    </span>
+    </h2>
+    <div id="myTickets" style="text-align:center;display:none"></div><br />
+    <div style="margin:auto;width:90%;text-align:center;">
+     <p>
+      &nbsp;&nbsp;<img src="images/available.gif" alt="Available" /> Available<img src="images/mine.gif" alt="Mine" /> Mine<img src="images/taken.gif" alt="Taken" /> Taken</p>
+    <h3>All Tickets &pound;35.00</h3>
+   </div>
+  </div>
+  <div style="clear:both"></div>
+ </div>
+ <div id='right' style='float:right; margin-top:2%;margin-right:15%'>
+  <div style="">
+   <table id="seatTable" style="align:center">
+    <tr>
+     <td ColSpan="7">A </td>
+     <td><img src="images/available.gif" style="border:none"  onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td ColSpan="6"></td>
+    </tr>
+    <tr>
+     <td ColSpan="7">B </td>
+     <td><img src="images/available.gif" style="border:none"  onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td ColSpan="6"></td>
+    </tr>
+    <tr>
+     <td ColSpan="7">C </td>
+     <td><img src="images/available.gif" style="border:none"  onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td ColSpan="6"></td>
+    </tr>
+    <tr>
+     <td>D </td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+      <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+    </tr>
+    <tr>
+     <td>E </td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+    </tr>
+    <tr>
+     <td>F </td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+    </tr>
+    <tr>
+     <td>G &nbsp;</td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+     <td id='last'><img src="images/available.gif" style="border:none" onmouseover="over(this)" onmouseout="out(this)" onclick="sold(this)" /></td>
+    </tr>
+   </table>
+   <div style="clear:both"></div>
+  </div>
+  <div id="theButtons">
+     <input type="button" value="Cancel Choices" title="Cancel Choices" id="cancelSelection" />
+  </div>
+  <br />
+  
+ </div>
+</body>
+</html>

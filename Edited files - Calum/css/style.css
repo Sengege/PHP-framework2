@@ -1,0 +1,104 @@
+/* Custom style sheet */
+
+body {
+	background: #EEE;
+}
+
+/* Custom bootstrap */
+.navbar-custom {
+ background : none;
+ background-image : none;
+ border-radius: 0px;
+}
+
+.btn-frontpage { font-size: 1.75em;}
+
+.navbar-custom .nav > li > a { color:  #055154; font-weight:bold;} 
+.navbar-custom .nav > li > a:hover,
+
+.navbar-custom .nav > li.open > a { background: #055154;; color:#FFF; }
+.navbar-custom .nav {   margin-top: 5px; }
+.navbar-custom .navbar-toggle .icon-bar { background: #055154;}
+.navbar-custom .navbar-toggle { border: 1px solid #055154; }
+.navbar-custom .navbar-brand { height:auto; }
+
+
+.section { padding:25px 0px 50px 0px;}
+.section .bigHeader { font-size: 4em; text-align: center;   font-weight: bold; }
+.section .bigPara { font-size:1.5em; line-height:1.5em;}
+.page-section { padding:25px 0px 50px 0px;}
+.white { background: #FFFFFF; }
+.yellow { background: #FFBF3B; }
+.aqua { background: #43A39F; }
+
+#custom-search-input{
+    padding: 3px;
+    border: solid 1px #E4E4E4;
+    border-radius: 6px;
+    background-color: #fff;
+    margin-bottom: 15px;
+}
+
+#custom-search-input input{
+    border: 0;
+    box-shadow: none;
+}
+
+#custom-search-input button{
+    margin: 2px 0 0 0;
+    background: none;
+    box-shadow: none;
+    border: 0;
+    color: #666666;
+    padding: 0 8px 0 10px;
+    border-left: solid 1px #ccc;
+}
+
+#custom-search-input button:hover{
+    border: 0;
+    box-shadow: none;
+    border-left: solid 1px #ccc;
+}
+
+#custom-search-input .glyphicon-search{
+    font-size: 23px;
+}
+
+/* CSS for chat box */
+.chat {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.chat li {
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px dotted #999;
+}
+
+.chat li.left .chat-body {
+    margin-left: 60px;
+}
+
+.chat li.right .chat-body {
+    margin-right: 60px;
+}
+
+.chat li .chat-body p {
+    margin: 0;
+}
+
+.panel .slidedown .glyphicon,
+.chat .glyphicon {
+    margin-right: 5px;
+}
+
+.chat-panel .panel-body {
+    height: 350px;
+    overflow-y: scroll;
+}
+
+.notification-count {
+    display: none;
+}

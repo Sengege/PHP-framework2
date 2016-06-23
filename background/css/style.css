@@ -1,0 +1,27 @@
+.form1{width:30%;float: left;margin-left: 10%;}
+#form2{float:left;width:80%;}
+.span{margin-left: 1%;}
+.table{width:80%;margin:0 auto;}
+.panel{width: 80%;margin: 0 auto;}
+.formgroup{width:30%;float:left;margin-left: 1%}
+#upload{float: left;width:90%;}
+#chart1{margin:0 auto;width:750px;}
+#chart2{margin:0 auto;width:750px;}
+#chart3{margin:0 auto;width:750px;}
+/*#plus{margin-left: 2%;}*/
+
+
+
+
+
+.doc{
+	margin:0 20%;
+}
+	
+h1{text-align:center}
+
+p{text-indent: 2em}
+
+img{width:500px;}
+
+p.note{color:red}

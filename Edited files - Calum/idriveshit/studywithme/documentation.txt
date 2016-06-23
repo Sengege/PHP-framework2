@@ -1,0 +1,21 @@
+documentation
+
+http://socweb8.napier.ac.uk/~40100046/studywithme/
+
+database login
+http://www.student.soc.napier.ac.uk/~phpmyadmin/index.php?token=44343b4ad3374220d4e2dcdf46a98464&old_usr=40100046
+//must be logged into 40100046 on napier machine
+Uname: 40100046
+password: BLL7fJLQt3AWWnPQ
+
+
+technologies
+jquery
+underscore
+backbonejs 
+bootstrap
+
+~Includes
+bootstrap
+databaseconnect
+file per root

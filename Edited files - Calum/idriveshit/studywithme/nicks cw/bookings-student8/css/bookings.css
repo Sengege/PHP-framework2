@@ -1,0 +1,37 @@
+
+body { font-family: arial; }
+
+  #header{margin:auto;width:90%;margin-top:1%}
+  #nav1{float:left;margin-left:50px;}
+  #nav a{text-decoration:none;float:left;margin-right:10px;font-size:20px;color:DarkBlue}
+  #nav input{;color:DarkBlue}
+  #submit {border:1px solid black;cursor:pointer;background-color:white}
+  
+  #maincontainer{width:50%;margin:auto;padding:5px;text-align:justify;}
+  
+  .seat { cursor:pointer; }
+  label.error  { color: red; display:block; padding:0px 10px;  }
+  
+  .clearfix { clear:both;}
+  
+
+  
+#loginputs input { padding:3px;}  
+#loginputs input[type=button] { padding:3px 7px; }  
+#loginputs { padding:5px; margin:2px; background:#eee; }
+
+  /* Styles for registration form */
+  .registerForm label { display:block; margin-top: 10px; }
+  .registerForm label.error { padding: 0px; margin: 5px 0px 15px 0px; font-size: 0.85em; font-style: italic; } 
+  .registerForm input { padding:5px; margin:5px 0px; display:block; width:90%;}
+  .registerForm input[type=submit] { border:1px solid #AAA; background:white; color:#2D2D2D; padding:10px; margin-top:20px; display:block; width:90%; cursor:pointer;}
+  .registerForm input[type=submit]:hover { background:#CCC; }
+  .registerForm select { padding:5px; display:block; margin:5px 0px; width:90%; }
+ 
+  .registerForm .left-col { float: left; width: 42%; border-right: 1px solid #AAA; margin: 10px; }
+  .registerForm .right-col { float: left; width: 42%; margin: 10px; }
+
+
+#bookingData { width:450px; padding:10px; }
+.ticket { padding: 10px; display: inline-block; margin: 5px; background: #EEE; }
+.ticket a { font-size: 0.7em; color: #fff; padding: 2px; background: #aaa; text-decoration: none; margin-left: 5px; display: inline-block; }
